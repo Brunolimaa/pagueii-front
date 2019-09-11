@@ -1,0 +1,488 @@
+<!-- Header -->
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="text-container">
+                            <!--h1>PAGUEII<br-->
+                                <h3><span id="js-rotating" style="color: #ffc107">Rápido, Fácil, Seguro</span></h3>
+                            <p class="p-large">A forma ideal para pagar suas contas</p>
+                            <!--a class="btn-solid-lg page-scroll" href="#your-link"><i class="fab fa-apple"></i>APP STORE</a-->
+                            <simulacao></simulacao>
+                        </div>
+                    </div> <!-- end of col -->
+                    <div class="col-lg-6">
+                        <div class="image-container">
+                            <img class="img-fluid" src="assets/images/credito-boleto.png" alt="alternative">
+                        </div> <!-- end of image-container -->
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of header-content -->
+    </header> <!-- end of header -->
+	
+	<!-- Lightbox -->
+	<div id="details-lightbox-1" class="lightbox-basic zoom-anim-dialog mfp-hide">
+		<div class="row">
+			<button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+			<div class="col-lg-6">
+				<img class="img-fluid" src="assets/images/details-lightbox-1.png" alt="alternative">
+			</div>
+			<div class="col-lg-6" id="formResultado">
+				<h3>SIMULAÇÃO</h3>
+				<hr>
+				<p>Escolha a melhor forma de parcelar suas contas.
+				<!--h4>PAGUEII</h4-->
+				Parcele em ate 12x no cartão de crédito.</p>
+				<p></p>
+				<table>
+					<form id="contactForm" data-toggle="validator" data-focus="false">
+						<div class="form-group">
+							<input type="text" class="form-control-input" id="cname" required>
+							<label class="label-control" for="cname">Name</label>
+							<div class="help-block with-errors"></div>
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-control-input" id="cmail" required>
+							<label class="label-control" for="cmail">E-mail</label>
+							<div class="help-block with-errors"></div>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control-input" id="cfone" required>
+							<label class="label-control" for="cfone">Telefone</label>
+							<div class="help-block with-errors"></div>
+						</div>
+						<div class="row">
+						  <div class="col-lg-6">
+							<div class="input-group">
+							  <input type="text" class="form-control" placeholder="Valor da conta" id="valorConta">
+							</div><!-- /input-group -->
+						  </div><!-- /.col-lg-6 -->
+						  <div class="col-lg-6">
+							<div class="input-group">
+								<select class="form-control" id="qtdVezesDividir">
+									<option value="6">6x</option>
+									<option value="7">7x</option>
+									<option value="8">8x</option>
+									<option value="9">9x</option>
+									<option value="10">10x</option>
+									<option value="11">11x</option>									
+									<option value="12">12x</option>									
+								</select>
+							</div><!-- /input-group -->
+						  </div><!-- /.col-lg-6 -->
+						</div>
+						
+					</form>
+					<tr><td class="icon-cell"><i class="fab fa-whatsapp"></i></td><td><a href="https://wa.me/5561982664160">Chamar no WhatsApp</a></td></tr>
+				</table>
+				<a class="btn-outline-reg mfp-close as-button" href="#details">Cancelar</a> 
+				<a class="btn-solid-reg" href="#your-link" onclick="simular();">Simular</a>
+			</div>
+			<div class="col-lg-6" id="formResultadoSimulacao">
+					<h3>SIMULAÇÃO</h3>
+					<hr>
+					<p>Escolha a melhor forma de parcelar suas contas.
+					<!--h4>PAGUEII</h4-->
+					Parcele em ate 12x no cartão de crédito.</p>
+					
+					<div style="display:none;" id="resultado">
+						<strong style="color: #8bc34a;">Resultado: </strong>
+						<p id="resulParcela"></p>
+					</div>
+								
+					<a class="btn-outline-reg mfp-close as-button" href="#details">Cancelar</a> 
+					<a class="btn-solid-reg" href="#your-link" onclick="voltar();">Voltar</a>
+			</div>
+		</div>
+	</div>
+
+<!-- Features -->
+    <div id="features" class="tabs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>FERRAMENTA</h2>
+                    <div class="p-heading p-large">
+						Nesse exato momento te apresento a mais nova plataforma que vai te livrar de todas as preocupações que acontecem todos os meses "PAGUEII".
+					</div>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+
+                <!-- Tabs Links -->
+                <ul class="nav nav-tabs" id="lenoTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="true"><i class="fas fa-search"></i>TIPOS DE CONTAS</a>		
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="false"><i class="fas fa-cog"></i>COMO PAGAR?</a>
+                    </li>
+                    <!--li class="nav-item">
+                        <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false"><i class="fas fa-search"></i>TIPOS DE CONTAS</a>
+                    </li-->
+                </ul>
+                <!-- end of tabs links -->
+
+
+                <!-- Tabs Content-->
+                <div class="tab-content" id="lenoTabsContent">
+                    
+                    <!-- Tab -->
+                    <div class="tab-pane fade" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                        <div class="container">
+                            <div class="row">
+                                
+                                <!-- Icon Cards Pane -->
+                                <div class="col-lg-4">
+                                    <div class="card left-pane first">
+                                        <div class="card-body">
+                                            <div class="text-wrapper">
+                                                <h4 class="card-title">Duvidas?</h4>
+                                                <p>Entre em contato e tire suas duvidas.</p>
+                                            </div>
+                                            <div class="card-icon">
+                                                <i class="far fa-compass"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--div class="card left-pane">
+                                        <div class="card-body">
+                                            <div class="text-wrapper">
+                                                <h4 class="card-title">Visual Editor</h4>
+                                                <p>Leno provides a well designed and ergonomic visual editor for you to edit your notes and input data</p>
+                                            </div>
+                                            <div class="card-icon">
+                                                <i class="far fa-file-code"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card left-pane">
+                                        <div class="card-body">
+                                            <div class="text-wrapper">
+                                                <h4 class="card-title">Refined Options</h4>
+                                                <p>Each option packaged in the app's menus is provided in order to improve your personal development status</p>
+                                            </div>
+                                            <div class="card-icon">
+                                                <i class="far fa-gem"></i>
+                                            </div>
+                                        </div>
+                                    </div-->
+                                </div>
+                                <!-- end of icon cards pane -->
+
+                                <!-- Image Pane -->
+                                <div class="col-lg-4">
+                                    <img class="img-fluid" src="assets/images/como-pagar.png" alt="alternative">
+                                </div>
+                                <!-- end of image pane -->
+                                
+                                <!-- Icon Cards Pane -->
+                                <div class="col-lg-4">
+                                    <div class="card right-pane first">
+                                        <div class="card-body">
+                                            <div class="card-icon">
+                                                <i class="far fa-calendar-check"></i>
+                                            </div>
+                                            <div class="text-wrapper">
+                                                <h4 class="card-title">IPVA</h4>
+                                                <p>Schedule your appointments, meetings and periodical evaluations using the provided in-app calendar option</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--div class="card right-pane">
+                                        <div class="card-body">
+                                            <div class="card-icon">
+                                                <i class="far fa-bookmark"></i>
+                                            </div>
+                                            <div class="text-wrapper">
+                                                <h4 class="card-title">IPTU</h4>
+                                                <p>Reading focus mode for long form articles, ebooks and other materials which involve large text areas</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card right-pane">
+                                        <div class="card-body">
+                                            <div class="card-icon">
+                                                <i class="fas fa-cube"></i>
+                                            </div>
+                                            <div class="text-wrapper">
+                                                <h4 class="card-title">BOLETOS</h4>
+                                                <p>Get a solid foundation for your self development efforts. Try Leno mobile app for any mobile platform</p>
+                                            </div>
+                                        </div>
+                                    </div-->
+                                </div>
+                                <!-- end of icon cards pane -->
+
+                            </div> <!-- end of row -->
+                        </div> <!-- end of container -->
+                    </div> <!-- end of tab-pane -->
+                    <!-- end of tab -->
+
+                    <!-- Tab -->
+                    <div class="tab-pane fade show active" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
+                        <div class="container">
+                            <div class="row">
+
+                                <!-- Image Pane -->
+                                <div class="col-md-4">
+                                    <img class="img-fluid" src="assets/images/mao-credito.png" alt="alternative">
+                                </div>
+                                <!-- end of image pane -->
+                                
+                                <!-- Text And Icon Cards Area -->
+                                <div class="col-md-8">
+                                    <div class="text-area">
+                                        <!--h3>PAGUEII te oferece facilidades em dividir suas contas em ate 12x.</h3-->
+                                        <h3>Divida suas contas em ate 12x.</h3>
+										<p>Pagueii te oferece a oportunidade de dividir diversos tipos de contas em ate 12x no cartão de crédito.</p>
+                                    </div> <!-- end of text-area -->
+                                    
+                                    <div class="icon-cards-area">
+                                            <div class="card">
+                                                <div class="card-icon">
+                                                    <i class="fas fa-cube"></i>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">IPVA</h4>
+                                                    <p>O imposto sobre a propriedade de veículos automotores é um imposto brasileiro que incide sobre a propriedade de veículos.</p>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-icon">
+                                                    <i class="far fa-bookmark"></i>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">IPTU</h4>
+                                                    <p>O Imposto sobre a Propriedade Predial e Territorial Urbana ou Imposto Predial e Territorial Urbano é um imposto Brasileiro.</p>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-icon">
+                                                    <i class="far fa-calendar-check"></i>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">FACULDADE</h4>
+                                                    <p>Podemos dividir diversos tipos de contas estudantil</p>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-icon">
+                                                    <i class="far fa-file-code"></i>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">ENTRE OUTRAS CONTAS</h4>
+                                                    <p>Dividimos suas mensalidades em ate 12x.</p>
+                                                </div>
+                                            </div>
+                                    </div> <!-- end of icon cards area -->
+                                </div> <!-- end of col-md-8 -->
+                                <!-- end of text and icon cards area -->
+
+                            </div> <!-- end of row -->
+                        </div> <!-- end of container -->
+                    </div> <!-- end of tab-pane -->
+                    <!-- end of tab -->
+
+                    <!-- Tab -->
+                    <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+                        <div class="container">
+                            <div class="row">
+
+                                <!-- Text And Icon Cards Area -->
+                                <div class="col-md-8">
+                                    <div class="icon-cards-area">
+                                        <div class="card">
+                                            <div class="card-icon">
+                                                <i class="far fa-calendar-check"></i>
+                                            </div>
+                                            <div class="card-body">
+                                                <h4 class="card-title">Calendar Input</h4>
+                                                <p>Schedule your appointments, meetings and periodical evaluations using the provided in-app calendar option</p>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-icon">
+                                                <i class="far fa-file-code"></i>
+                                            </div>
+                                            <div class="card-body">
+                                                <h4 class="card-title">Visual Editor</h4>
+                                                <p>Leno provides a well designed and ergonomic visual editor for you to edit your notes and input data</p>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-icon">
+                                                <i class="fas fa-cube"></i>
+                                            </div>
+                                            <div class="card-body">
+                                                <h4 class="card-title">Good Foundation</h4>
+                                                <p>Get a solid foundation for your self development efforts. Try Leno mobile app for any mobile platform</p>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-icon">
+                                                <i class="far fa-bookmark"></i>
+                                            </div>
+                                            <div class="card-body">
+                                                <h4 class="card-title">Easy Reading</h4>
+                                                <p>Reading focus mode for long form articles, ebooks and other materials which involve large text areas</p>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end of icon cards area -->
+                                    
+                                    <div class="text-area">
+                                        <h3>Monitoring Tools Evaluation</h3>
+                                        <p>Monitor the evolution of your finances and health state using tools integrated in Leno. The generated real time reports can be filtered based on any <a class="turquoise" href="#your-link">desired criteria</a>.</p>
+                                    </div> <!-- end of text-area -->
+                                </div> <!-- end of col-md-8 -->
+                                <!-- end of text and icon cards area -->
+
+                                <!-- Image Pane -->
+                                <div class="col-md-4">
+                                    <img class="img-fluid" src="assets/images/features-iphone-3.png" alt="alternative">
+                                </div>
+                                <!-- end of image pane -->
+                                    
+                            </div> <!-- end of row -->
+                        </div> <!-- end of container -->
+                    </div><!-- end of tab-pane -->
+                    <!-- end of tab -->
+
+                </div> <!-- end of tab-content -->
+                <!-- end of tabs content -->
+
+            </div> <!-- end of row --> 
+        </div> <!-- end of container --> 
+    </div> <!-- end of tabs -->
+    <!-- end of features -->
+
+	  <!-- Details 1 -->
+    <div id="details" class="basic-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img class="img-fluid seguranca" src="assets/images/seguranca.png" alt="alternative">
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h3>Pagueii</h3>
+                        <p>Plataforma feita para você, aqui é possivel parcelas todas as suas contas. Faça agora mesmo uma simulação, entre em contato e seja feliz :D...</p>
+                        <simulacao></simulacao>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-2 -->
+    <!-- end of details 1 -->
+	<!-- Details 2 -->
+    <div class="basic-3">
+        <div class="second">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="text-container">
+                            <h3>Facilidades</h3>
+                            <p>Em meio a tantas dificuldades "FACILIDADE" é algo trivial onde não podemos perder grandes 
+								chances de cortas vários caminhos. Agora mesmo você poderá dividir suas contas e ficar livres das preocupações.</p>
+                            <!--a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-2">LIGHTBOX</a-->
+                        </div> <!-- end of text-container -->
+                    </div> <!-- end of col -->
+                    <div class="col-lg-6">
+                        <img class="img-fluid" src="assets/images/pagamento.png" alt="alternative">
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of second -->
+    </div> <!-- end of basic-3 -->    
+    <!-- end of details 2 -->
+	    <!-- Details Lightboxes -->
+	
+	 <!-- Statistics -->
+    <div class="counter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <!-- Counter -->
+                    <div id="counter">
+                        <div class="cell">
+                            <div class="counter-value number-count" data-count="231">1</div>
+                            <p class="counter-info">Usuários felizes</p>
+                        </div>
+                        <div class="cell">
+                            <div class="counter-value number-count" data-count="85">1</div>
+                            <p class="counter-info">Simulações</p>
+                        </div>
+                        <!--div class="cell">
+                            <div class="counter-value number-count" data-count="59">1</div>
+                            <p class="counter-info">Good Reviews</p>
+                        </div>
+                        <div class="cell">
+                            <div class="counter-value number-count" data-count="127">1</div>
+                            <p class="counter-info">Case Studies</p>
+                        </div>
+                    </div-->
+                    <!-- end of counter -->
+                    
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of counter -->
+    <!-- end of statistics -->
+
+
+    <!-- Contact -->
+    <div id="contact" class="form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>ENTRE EM CONTATO</h2>
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="address">Tire suas dúvidas agora mesmo!</li>
+                        <li><i class="fas fa-map-marker-alt"></i>Valparaiso, GOIÁS</li>
+                        <li><i class="fas fa-phone"></i><a class="blue" href="tel:003024630820">+55 61 55555-5555</a></li>
+                        <li><i class="fas fa-envelope"></i><a class="blue" href="mailto:office@leno.com">suporte@pagueii.com.br</a></li>
+                    </ul>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>
+
+                    <!-- Contact Form -->
+                    <form id="contactForm" data-toggle="validator" data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input"  [(ngModel)]="cname" id="cname" name="cname" required>
+                            <label class="label-control" for="cname">Nome</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" [(ngModel)]="cemail" name="cemail" class="form-control-input" id="cemail" required>
+                            <label class="label-control" for="cemail">Email</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control-textarea" [(ngModel)]="cmessage" id="cmessage" name="cmessage" required></textarea>
+                            <label class="label-control" for="cmessage">Mensagem...</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>I have read and agree to Leno's stated conditions in <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms Conditions</a> 
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control-submit-button" (click)="enviarMensagem();">ENVIAR MENSAGEM</button>
+                        </div>
+                        <div class="form-message">
+                            <div id="cmsgSubmit" class="h3 text-center hidden"></div>
+                        </div>
+                    </form>
+                    <!-- end of contact form -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form -->
+    <!-- end of contact -->

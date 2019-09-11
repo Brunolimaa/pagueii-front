@@ -1,0 +1,71 @@
+<!-- Breadcrumbs -->
+    <div class="ex-basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumbs">
+                    </div> <!-- end of breadcrumbs -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of ex-basic-1 -->
+    <!-- end of breadcrumbs -->
+	
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="container">
+            <div class="row" >
+                <div class="col-lg-12">
+                    <!--h1>Lista simulação</h1-->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+			  <p>Usuários que realizaram simulação</p>            
+			  <table class="table table-striped">
+				<thead style="color: #fff;">
+				  <tr>
+					<th>Nome</th>
+					<th>Email</th>
+					<th>Telefone</th>
+					<th>Valor da Conta</th>
+					<th>Simulação</th>
+					<th></th>
+				  </tr>
+				</thead>
+				<tbody style="color: #fff;">
+				  
+				 <tr *ngFor="let simulacao of listaSimulacao">
+					<td>{{simulacao.nome}}</td>					
+					<td>{{simulacao.email}}</td>
+					<td>{{simulacao.telefone}}</td>
+					<td>R$ {{simulacao.valor}}</td>
+					<td>{{simulacao.resultado}}</td>
+					<td>
+						<a href="https://wa.me/55{{simulacao.telefone}}"><i class="fab fa-whatsapp"></i></a>
+						<!--input type="button" class="btn btn-primary" value="Enviar MSG."-->
+					</td>
+				  </tr>
+				  				  
+				</tbody>
+			  </table>					
+              </div>
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+    
+
+
+    <!-- Breadcrumbs -->
+    <div class="ex-basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumbs">
+                        <a href="index.html">Home</a><i class="fa fa-angle-double-right"></i><span>Login</span>
+                    </div> <!-- end of breadcrumbs -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of ex-basic-1 -->
+    <!-- end of breadcrumbs -->

@@ -1,0 +1,100 @@
+ <!-- Header -->
+ <header id="header" class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Resultado</h1>
+
+                    <p>
+                        Ola, {{nome}} sua simulação ficou:<br/>
+                        {{resultado}}
+
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+
+
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Mais informações</button>
+
+
+
+
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+            <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>
+    
+      <div class="modal-dialog modal-lg">
+      
+        <!-- Modal content-->
+        <div class="modal-content" style="background:#231f1fb0;">
+          <div class="modal-header">
+            <button type="button" id="btnClose" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="assets/images/informacao.png" alt="alternative">
+                </div>
+                <div class="col-lg-6">
+                    <h3>INFORMAÇÃO</h3>
+                    <hr>
+                    <p>Confirma seus dados, iremos entrar em contato em instantes
+                    <!--h4>PAGUEII</h4-->
+                    para passar mais informações</p>
+                    <p></p>
+                    <div [hidden]="alterar">
+                        <strong>Nome:</strong> {{simulacao.nome}} <br/>
+                        <strong>E-mail:</strong> {{simulacao.email}} <br/>
+                        <strong>Telefone:</strong> {{simulacao.telefone}} <hr/>
+                        <button type="button" class="btn btn-primary" (click)="alterarInformacao();">Alterar</button>
+                        &nbsp;&nbsp;&nbsp;
+                        <button type="button" class="btn btn-info" (click)="salvar();" data-dismiss="modal">Confirmar</button>
+                    </div>
+                        <form id="contactForm" [hidden]="naoAlterar" data-toggle="validator" data-focus="false">
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="simulacao.nome" placeholder="nome" name="name" id="cname" class="form-control-input" >
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                    <input type="email" [(ngModel)]="simulacao.email" placeholder="E-mail" name="email" id="cmail" class="form-control-input" >
+                                    <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                    <input type="text" [(ngModel)]="simulacao.telefone" placeholder="Telefone" name="telefone" id="cfone" class="form-control-input"/>
+                                    <div class="help-block with-errors"></div>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-warning" (click)="cancelarAlteracao();">Voltar</button>
+                                &nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-info" (click)="salvar();" data-dismiss="modal">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+          </div>
+          <div class="modal-footer">		
+            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+
+    <!-- Breadcrumbs -->
+    <div class="ex-basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumbs">
+                        <a href="index.html">Home</a><i class="fa fa-angle-double-right"></i><span>Privacy Policy</span>
+                    </div> <!-- end of breadcrumbs -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of ex-basic-1 -->
+    <!-- end of breadcrumbs -->
