@@ -7,7 +7,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --output-path dist  --aot --prod",
+    "postinstall": "ng build --aot --prod",
     "start": "node server.js"
   },
   "private": true,
@@ -48,7 +48,7 @@
     "typescript": "~2.9.2"
   },
   "engines": {
-    "node": "v10.10.0",
-    "npm": "6.4.1"
+    "node": "~v10.10.0",
+    "npm": "~6.4.1"
   }
 }
